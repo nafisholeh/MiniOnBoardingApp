@@ -1,7 +1,11 @@
 import React from "react";
 import { View, ImageBackground } from "react-native";
 
-import { OnBoardingFooter, OnBoardingLogoBackground } from "#components";
+import {
+  OnBoardingFooter,
+  OnBoardingLogoBackground,
+  ExodusLogo,
+} from "#components";
 import Images from "#images";
 
 import styles from "./Onboarding.style";
@@ -17,8 +21,11 @@ const OnBoarding = () => {
         <View>
           <OnBoardingFooter />
         </View>
-        <View style={styles.logo}>
+        <View style={styles.logoBackground}>
           <OnBoardingLogoBackground />
+        </View>
+        <View style={styles.logo}>
+          <ExodusLogo />
         </View>
       </View>
     </ImageBackground>
