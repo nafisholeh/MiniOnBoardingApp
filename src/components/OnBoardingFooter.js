@@ -1,24 +1,25 @@
-import * as React from "react";
-
-import {
-  Svg,
-  Use,
-  G,
+import React, { useMemo } from "react";
+import { useWindowDimensions } from "react-native";
+import Svg, {
   Defs,
   LinearGradient,
-  Path,
-  Mask,
   Stop,
+  Path,
+  G,
+  Mask,
+  Use,
 } from "react-native-svg";
 
+import { isTablet } from "#utils/screen";
+
 const OnBoardingFooter = (props) => {
+  const { height, width } = useWindowDimensions();
+  const isTablets = useMemo(() => isTablet(width, height), [width, height]);
   return (
     <Svg
       width="100%"
-      height="100%"
-      viewBox={`0 -101 375 443`}
-      xmlns="http://www.w3.org/2000/svg"
-      xmlnsXlink="http://www.w3.org/1999/xlink"
+      height={isTablets ? height / 1.5 : height / 1.7}
+      viewBox={[0, 0, 375, isTablets ? 330 : 400].join(" ")}
       {...props}
     >
       <Defs>
@@ -43,7 +44,7 @@ const OnBoardingFooter = (props) => {
         <Path
           fill="url(#c)"
           opacity={0.1}
-          Mask="url(#d)"
+          mask="url(#d)"
           d="M188-20h187v463H188z"
         />
       </G>

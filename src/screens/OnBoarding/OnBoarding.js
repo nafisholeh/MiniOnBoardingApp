@@ -1,7 +1,7 @@
 import React from "react";
-import { ImageBackground } from "react-native";
+import { View, ImageBackground } from "react-native";
 
-import { OnBoardingFooter } from "#components";
+import { OnBoardingFooter, OnBoardingLogoBackground } from "#components";
 import Images from "#images";
 
 import styles from "./Onboarding.style";
@@ -13,7 +13,14 @@ const OnBoarding = () => {
       imageStyle={styles.maskImages}
       style={styles.mask}
     >
-      <OnBoardingFooter />
+      <View style={styles.container}>
+        <View>
+          <OnBoardingFooter />
+        </View>
+        <View style={styles.logo}>
+          <OnBoardingLogoBackground />
+        </View>
+      </View>
     </ImageBackground>
   );
 };
