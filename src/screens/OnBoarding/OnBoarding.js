@@ -5,6 +5,7 @@ import {
   OnBoardingFooter,
   OnBoardingLogoBackground,
   ExodusLogo,
+  ExodusTitle,
 } from "#components";
 import Images from "#images";
 
@@ -26,6 +27,9 @@ const OnBoarding = () => {
         </View>
         <View style={styles.logo}>
           <ExodusLogo />
+        </View>
+        <View style={styles.exodusTitle}>
+          <ExodusTitle />
         </View>
       </View>
     </ImageBackground>

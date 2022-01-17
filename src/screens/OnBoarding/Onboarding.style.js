@@ -5,6 +5,14 @@ export default StyleSheet.create({
     flex: 1,
     justifyContent: "flex-end",
   },
+  exodusTitle: {
+    alignItems: "center",
+    justifyContent: "center",
+    left: 0,
+    position: "absolute",
+    right: 0,
+    top: "50%",
+  },
   logo: {
     alignItems: "center",
     justifyContent: "center",
