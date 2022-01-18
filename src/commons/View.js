@@ -15,3 +15,10 @@ export const ViewEnd = styled(View)({
   flex: 1,
   justifyContent: "flex-end",
 });
+
+export const ViewInBottom = styled(View)({
+  position: "absolute",
+  bottom: 0,
+  left: 0,
+  right: 0,
+});

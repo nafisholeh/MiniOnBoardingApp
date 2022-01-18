@@ -1,7 +1,8 @@
 import React from "react";
 import { View, ImageBackground } from "react-native";
 
-import { ViewCenter, ViewEnd } from "#commons/View";
+import { ViewCenter, ViewEnd, ViewInBottom } from "#commons/View";
+import { Heading1 } from "#commons/Text";
 import {
   OnBoardingFooter,
   OnBoardingLogoBackground,
@@ -33,6 +34,9 @@ const OnBoarding = () => {
           <ExodusTitle />
         </ViewCenter>
       </ViewEnd>
+      <ViewInBottom>
+        <Heading1>Secure & Easy to Use Crypto Wallet</Heading1>
+      </ViewInBottom>
     </ImageBackground>
   );
 };

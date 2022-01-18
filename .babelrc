@@ -7,7 +7,8 @@
           "#components": "./src/components",
           "#screens": "./src/screens",
           "#utils": "./src/utils",
-          "#commons": "./src/commons"
+          "#commons": "./src/commons",
+          "#constants": "./src/constants"
         }
       }]
     ]
