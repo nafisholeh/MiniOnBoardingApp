@@ -1,6 +1,7 @@
 import React from "react";
 import { View, ImageBackground } from "react-native";
 
+import { ViewCenter, ViewEnd } from "#commons/View";
 import {
   OnBoardingFooter,
   OnBoardingLogoBackground,
@@ -18,20 +19,20 @@ const OnBoarding = () => {
       imageStyle={styles.maskImages}
       style={styles.mask}
     >
-      <View style={styles.container}>
+      <ViewEnd>
         <View>
           <OnBoardingFooter />
         </View>
-        <View style={styles.logoBackground}>
+        <ViewCenter top="33%">
           <OnBoardingLogoBackground />
-        </View>
-        <View style={styles.logo}>
+        </ViewCenter>
+        <ViewCenter top="39%">
           <ExodusLogo />
-        </View>
-        <View style={styles.exodusTitle}>
+        </ViewCenter>
+        <ViewCenter top="50%">
           <ExodusTitle />
-        </View>
-      </View>
+        </ViewCenter>
+      </ViewEnd>
     </ImageBackground>
   );
 };

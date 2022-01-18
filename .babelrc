@@ -6,7 +6,8 @@
           "#images": "./src/assets/images",
           "#components": "./src/components",
           "#screens": "./src/screens",
-          "#utils": "./src/utils"
+          "#utils": "./src/utils",
+          "#commons": "./src/commons"
         }
       }]
     ]

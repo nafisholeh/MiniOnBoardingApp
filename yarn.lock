@@ -5748,6 +5748,11 @@ setprototypeof@1.2.0:
   resolved "https://registry.yarnpkg.com/setprototypeof/-/setprototypeof-1.2.0.tgz#66c9a24a73f9fc28cbe66b09fed3d33dcaf1b424"
   integrity sha512-E5LDX7Wrp85Kil5bhZv46j8jOeboKq5JMmYM3gVGdGH8xFpPWXUMsNrlODCrkoxMEeNi/XZIwuRvY4XNwYMJpw==
 
+shakl@^0.0.11:
+  version "0.0.11"
+  resolved "https://registry.yarnpkg.com/shakl/-/shakl-0.0.11.tgz#91250308578ab0e790bdcd290b376bf644aadaf2"
+  integrity sha512-1aoVIQhNdlil/Mlh4zwEC7UD9mt1nRZPCuL/h1G1e9iw81G5Psr3WBUSIO22/uu/6ZrferLjzF52oNoNvci7KQ==
+
 shallow-clone@^3.0.0:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/shallow-clone/-/shallow-clone-3.0.1.tgz#8f2981ad92531f55035b01fb230769a40e02efa3"
