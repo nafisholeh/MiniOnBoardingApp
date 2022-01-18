@@ -3,6 +3,7 @@ const assets = {
   receive: require("./receive.png"),
   send: require("./send.png"),
   exchange: require("./exchange.png"),
+  control: require("./control.png"),
 };
 
 export default assets;

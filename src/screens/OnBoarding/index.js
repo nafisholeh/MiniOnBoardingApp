@@ -25,16 +25,23 @@ const pageData = [
       "Instantly swap your crypto 75+ other assets securely from your wallet",
     image: Images.exchange,
   },
+  {
+    heading: "Control Your Wealth",
+    description:
+      "Funds are under your control and your privacy is protected, no account required",
+    image: Images.control,
+  },
 ];
 
 const OnBoarding = () => {
-  const [pageIndex, setPageIndex] = useState(1);
+  const [pageIndex, setPageIndex] = useState(0);
   const openNextPage = () => {
     setPageIndex(pageIndex + 1);
   };
   const skipToLastPage = () => {
     setPageIndex(lastPageIndex);
   };
+  const openUserPage = () => {};
   return (
     <ViewContainer>
       {pageIndex === 0 ? (
@@ -43,11 +50,13 @@ const OnBoarding = () => {
           skipToLastPage={skipToLastPage}
         />
       ) : null}
-      {pageIndex >= 1 && pageIndex < 4 ? (
+      {pageIndex > 0 ? (
         <StepperOnBoarding
           data={pageData[pageIndex - 1]}
           openNextPage={openNextPage}
           skipToLastPage={skipToLastPage}
+          openUserPage={openUserPage}
+          useTwoStackButtons={pageIndex === lastPageIndex}
         />
       ) : null}
     </ViewContainer>

@@ -1,6 +1,6 @@
 import React from "react";
 import { View } from "react-native";
-import { func, string } from "prop-types";
+import { func, string, bool } from "prop-types";
 
 import {
   LinearGradientFullBackground,
@@ -19,7 +19,7 @@ import {
   TextSmallTouchableOpacity,
   TextSmallButton,
 } from "#commons/Text";
-import { OnBoardingFooter, StepIndicator } from "#components";
+import { OnBoardingFooter, StepIndicator, OnBoardingButton } from "#components";
 import { moderateScale } from "#utils/screen";
 
 const Heading2Transparent = Heading2.extend({ opacity: 0.5 });
@@ -41,7 +41,13 @@ const ImageFitCover = ImageFitContainer.extend({
   height: moderateScale(550),
 });
 
-const StepperOnBoarding = ({ data, openNextPage, skipToLastPage }) => {
+const StepperOnBoarding = ({
+  data,
+  openNextPage,
+  skipToLastPage,
+  openUserPage,
+  useTwoStackButtons,
+}) => {
   const { heading, description, image } = data;
   return (
     <>
@@ -57,16 +63,34 @@ const StepperOnBoarding = ({ data, openNextPage, skipToLastPage }) => {
       <ViewInBottomWithSpacing>
         <Heading1>{heading}</Heading1>
         <Heading2Transparent>{description}</Heading2Transparent>
-        <TextTouchableOpacityBottom onPress={openNextPage}>
-          Next
-        </TextTouchableOpacityBottom>
-        <ViewHorizontalStretch>
-          <TextSmallInvisible>SKIP</TextSmallInvisible>
-          <StepIndicator stepTotal={4} />
-          <TextSmallTouchableTransparent onPress={skipToLastPage}>
-            SKIP
-          </TextSmallTouchableTransparent>
-        </ViewHorizontalStretch>
+        {useTwoStackButtons ? (
+          <>
+            <OnBoardingButton
+              onPress={openUserPage}
+              marginTop={moderateScale(17)}
+              title="GET STARTED"
+            ></OnBoardingButton>
+            <OnBoardingButton
+              onPress={openUserPage}
+              marginTop={moderateScale(8)}
+              isSecondary
+              title="I already have a wallet"
+            ></OnBoardingButton>
+          </>
+        ) : (
+          <>
+            <TextTouchableOpacityBottom onPress={openNextPage}>
+              Next
+            </TextTouchableOpacityBottom>
+            <ViewHorizontalStretch>
+              <TextSmallInvisible>SKIP</TextSmallInvisible>
+              <StepIndicator stepTotal={4} />
+              <TextSmallTouchableTransparent onPress={skipToLastPage}>
+                SKIP
+              </TextSmallTouchableTransparent>
+            </ViewHorizontalStretch>
+          </>
+        )}
       </ViewInBottomWithSpacing>
     </>
   );
@@ -75,11 +99,17 @@ const StepperOnBoarding = ({ data, openNextPage, skipToLastPage }) => {
 StepperOnBoarding.propTypes = {
   openNextPage: func.isRequired,
   skipToLastPage: func.isRequired,
+  openUserPage: func.isRequired,
   data: {
     heading: string,
     description: string,
     image: string,
   },
+  useTwoStackButtons: bool,
+};
+
+StepperOnBoarding.defaultProps = {
+  useTwoStackButtons: false,
 };
 
 export default StepperOnBoarding;
