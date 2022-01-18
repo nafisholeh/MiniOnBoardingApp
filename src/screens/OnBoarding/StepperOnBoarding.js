@@ -1,6 +1,6 @@
 import React from "react";
 import { View } from "react-native";
-import { func, string, bool } from "prop-types";
+import { func, string, bool, number } from "prop-types";
 
 import {
   LinearGradientFullBackground,
@@ -42,6 +42,7 @@ const ImageFitCover = ImageFitContainer.extend({
 });
 
 const StepperOnBoarding = ({
+  currentPageIndex,
   data,
   openNextPage,
   skipToLastPage,
@@ -84,7 +85,7 @@ const StepperOnBoarding = ({
             </TextTouchableOpacityBottom>
             <ViewHorizontalStretch>
               <TextSmallInvisible>SKIP</TextSmallInvisible>
-              <StepIndicator stepTotal={4} />
+              <StepIndicator activeIndex={currentPageIndex} stepTotal={4} />
               <TextSmallTouchableTransparent onPress={skipToLastPage}>
                 SKIP
               </TextSmallTouchableTransparent>
@@ -97,6 +98,7 @@ const StepperOnBoarding = ({
 };
 
 StepperOnBoarding.propTypes = {
+  currentPageIndex: number,
   openNextPage: func.isRequired,
   skipToLastPage: func.isRequired,
   openUserPage: func.isRequired,
@@ -109,6 +111,7 @@ StepperOnBoarding.propTypes = {
 };
 
 StepperOnBoarding.defaultProps = {
+  currentPageIndex: 0,
   useTwoStackButtons: false,
 };
 

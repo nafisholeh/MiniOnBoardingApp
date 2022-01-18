@@ -52,6 +52,7 @@ const OnBoarding = () => {
       ) : null}
       {pageIndex > 0 ? (
         <StepperOnBoarding
+          currentPageIndex={pageIndex - 1}
           data={pageData[pageIndex - 1]}
           openNextPage={openNextPage}
           skipToLastPage={skipToLastPage}
