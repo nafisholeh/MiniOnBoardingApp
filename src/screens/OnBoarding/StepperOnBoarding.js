@@ -1,6 +1,6 @@
 import React from "react";
 import { View } from "react-native";
-import { func } from "prop-types";
+import { func, string } from "prop-types";
 import FlexImage from "react-native-flex-image";
 
 import { LinearGradientFullBackground } from "#commons/Image";
@@ -20,7 +20,6 @@ import {
 import { OnBoardingFooter, StepIndicator } from "#components";
 import Colors from "#constants/colors";
 import { moderateScale } from "#utils/screen";
-import Images from "#images";
 
 const Heading2Transparent = Heading2.extend({ opacity: 0.5 });
 const TextSmallTouchableTransparent = TextSmallTouchableOpacity.extend({
@@ -38,7 +37,8 @@ const ViewHorizontalStretch = ViewHorizontal.extend({
   justifyContent: "space-between",
 });
 
-const StepperOnBoarding = ({ openNextPage, skipToLastPage }) => {
+const StepperOnBoarding = ({ data, openNextPage, skipToLastPage }) => {
+  const { heading, description, image } = data;
   return (
     <>
       <LinearGradientFullBackground
@@ -53,16 +53,16 @@ const StepperOnBoarding = ({ openNextPage, skipToLastPage }) => {
         </View>
       </ViewEnd>
       <ViewCenter top="6%">
-        <FlexImage
-          source={Images.receive}
-          style={{ width: "100%", height: moderateScale(550) }}
-        ></FlexImage>
+        {image ? (
+          <FlexImage
+            source={image}
+            style={{ width: "100%", height: moderateScale(550) }}
+          ></FlexImage>
+        ) : null}
       </ViewCenter>
       <ViewInBottomWithSpacing>
-        <Heading1>Receive</Heading1>
-        <Heading2Transparent>
-          Receive crypto by scanning or sharing your unique QR code or address
-        </Heading2Transparent>
+        <Heading1>{heading}</Heading1>
+        <Heading2Transparent>{description}</Heading2Transparent>
         <TextTouchableOpacityBottom onPress={openNextPage}>
           Next
         </TextTouchableOpacityBottom>
@@ -81,6 +81,11 @@ const StepperOnBoarding = ({ openNextPage, skipToLastPage }) => {
 StepperOnBoarding.propTypes = {
   openNextPage: func.isRequired,
   skipToLastPage: func.isRequired,
+  data: {
+    heading: string,
+    description: string,
+    image: string,
+  },
 };
 
 export default StepperOnBoarding;
