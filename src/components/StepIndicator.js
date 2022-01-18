@@ -24,6 +24,7 @@ const ActiveIndicator = styled(View)({
 
 const ViewWrapIndicators = ViewHorizontal.extend({
   width: "27%",
+  justifyContent: "space-around",
 });
 
 const StepIndicator = ({ stepTotal, activeIndex }) => {

@@ -28,6 +28,17 @@ const TextButton = styled(Text)({
 
 export const TextTouchableOpacity = styled.Touchable({}).withChild(TextButton);
 
+export const TextSmallButton = styled(Text)({
+  textAlign: "center",
+  fontWeight: "400",
+  fontSize: moderateScale(13, 0.25),
+  color: Colors.WHITE,
+});
+
+export const TextSmallTouchableOpacity = styled
+  .Touchable({})
+  .withChild(TextSmallButton);
+
 export const TextInButton = styled(Text)({
   textAlign: "center",
   fontWeight: "500",

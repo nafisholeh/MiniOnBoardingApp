@@ -3,16 +3,36 @@ import { View } from "react-native";
 import { func } from "prop-types";
 
 import { LinearGradientFullBackground } from "#commons/Image";
-import { ViewEnd, ViewInBottomWithSpacing } from "#commons/View";
-import { Heading1, Heading2, TextTouchableOpacity } from "#commons/Text";
+import {
+  ViewEnd,
+  ViewHorizontal,
+  ViewInBottomWithSpacing,
+} from "#commons/View";
+import {
+  Heading1,
+  Heading2,
+  TextTouchableOpacity,
+  TextSmallTouchableOpacity,
+  TextSmallButton,
+} from "#commons/Text";
 import { OnBoardingFooter, StepIndicator } from "#components";
 import Colors from "#constants/colors";
 import { moderateScale } from "#utils/screen";
 
 const Heading2Transparent = Heading2.extend({ opacity: 0.5 });
+const TextSmallTouchableTransparent = TextSmallTouchableOpacity.extend({
+  opacity: 0.5,
+});
+const TextSmallInvisible = TextSmallButton.extend({
+  opacity: 0,
+});
 const TextTouchableOpacityBottom = TextTouchableOpacity.extend({
   marginTop: moderateScale(36),
   marginBottom: moderateScale(39),
+});
+const ViewHorizontalStretch = ViewHorizontal.extend({
+  width: "92%",
+  justifyContent: "space-between",
 });
 
 const StepperOnBoarding = ({ openNextPage, skipToLastPage }) => {
@@ -36,7 +56,13 @@ const StepperOnBoarding = ({ openNextPage, skipToLastPage }) => {
         <TextTouchableOpacityBottom onPress={openNextPage}>
           Next
         </TextTouchableOpacityBottom>
-        <StepIndicator stepTotal={4} />
+        <ViewHorizontalStretch>
+          <TextSmallInvisible>SKIP</TextSmallInvisible>
+          <StepIndicator stepTotal={4} />
+          <TextSmallTouchableTransparent onPress={skipToLastPage}>
+            SKIP
+          </TextSmallTouchableTransparent>
+        </ViewHorizontalStretch>
       </ViewInBottomWithSpacing>
     </>
   );

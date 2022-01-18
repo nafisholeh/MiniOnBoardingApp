@@ -40,5 +40,4 @@ export const ViewInBottomWithSpacing = ViewInBottom.extend({
 export const ViewHorizontal = styled(View)({
   flexDirection: "row",
   alignItems: "center",
-  justifyContent: "space-around",
 });
