@@ -21,4 +21,5 @@ export const ViewInBottom = styled(View)({
   bottom: 0,
   left: 0,
   right: 0,
+  alignItems: "center",
 });
