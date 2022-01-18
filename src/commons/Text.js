@@ -7,7 +7,7 @@ import { moderateScale } from "#utils/screen";
 export const Heading1 = styled(Text)({
   textAlign: "center",
   fontWeight: "300",
-  fontSize: 32,
+  fontSize: moderateScale(32, 0.25),
   color: Colors.WHITE,
   marginVertical: moderateScale(10),
 });
@@ -15,8 +15,10 @@ export const Heading1 = styled(Text)({
 export const ButtonText = styled(Text)({
   textAlign: "center",
   fontWeight: "500",
-  fontSize: 13,
+  fontSize: moderateScale(13, 0.25),
   color: Colors.WHITE,
 });
 
-export const ButtonSecondaryText = ButtonText.extend({ fontSize: 14 });
+export const ButtonSecondaryText = ButtonText.extend({
+  fontSize: moderateScale(14, 0.25),
+});
