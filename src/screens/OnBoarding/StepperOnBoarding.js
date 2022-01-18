@@ -1,9 +1,11 @@
 import React from "react";
 import { View } from "react-native";
 import { func, string } from "prop-types";
-import FlexImage from "react-native-flex-image";
 
-import { LinearGradientFullBackground } from "#commons/Image";
+import {
+  LinearGradientFullBackground,
+  ImageFitContainer,
+} from "#commons/Image";
 import {
   ViewEnd,
   ViewHorizontal,
@@ -35,6 +37,9 @@ const ViewHorizontalStretch = ViewHorizontal.extend({
   width: "92%",
   justifyContent: "space-between",
 });
+const ImageFitCover = ImageFitContainer.extend({
+  height: moderateScale(550),
+});
 
 const StepperOnBoarding = ({ data, openNextPage, skipToLastPage }) => {
   const { heading, description, image } = data;
@@ -47,12 +52,7 @@ const StepperOnBoarding = ({ data, openNextPage, skipToLastPage }) => {
         </View>
       </ViewEnd>
       <ViewCenter top="6%">
-        {image ? (
-          <FlexImage
-            source={image}
-            style={{ width: "100%", height: moderateScale(550) }}
-          ></FlexImage>
-        ) : null}
+        {image ? <ImageFitCover source={image} /> : null}
       </ViewCenter>
       <ViewInBottomWithSpacing>
         <Heading1>{heading}</Heading1>
