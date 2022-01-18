@@ -12,13 +12,25 @@ export const Heading1 = styled(Text)({
   marginVertical: moderateScale(10),
 });
 
-export const ButtonText = styled(Text)({
+export const Heading2 = styled(Text)({
+  textAlign: "center",
+  fontWeight: "400",
+  fontSize: moderateScale(17, 0.25),
+  color: Colors.WHITE,
+});
+
+const TextButton = styled(Text)({
+  textAlign: "center",
+  fontWeight: "400",
+  fontSize: moderateScale(24, 0.25),
+  color: Colors.WHITE,
+});
+
+export const TextTouchableOpacity = styled.Touchable({}).withChild(TextButton);
+
+export const TextInButton = styled(Text)({
   textAlign: "center",
   fontWeight: "500",
   fontSize: moderateScale(13, 0.25),
   color: Colors.WHITE,
-});
-
-export const ButtonSecondaryText = ButtonText.extend({
-  fontSize: moderateScale(14, 0.25),
 });
