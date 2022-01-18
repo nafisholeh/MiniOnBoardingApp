@@ -2,12 +2,12 @@ import OnBoardingFooter from "./OnBoardingFooter";
 import OnBoardingLogoBackground from "./OnBoardingLogoBackground";
 import ExodusLogo from "./ExodusLogo";
 import ExodusTitle from "./ExodusTitle";
-import Button from "./Button";
+import OnBoardingButton from "./OnBoardingButton";
 
 export {
   OnBoardingFooter,
   OnBoardingLogoBackground,
   ExodusLogo,
   ExodusTitle,
-  Button,
+  OnBoardingButton,
 };

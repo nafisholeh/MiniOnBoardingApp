@@ -8,7 +8,7 @@ import {
   OnBoardingLogoBackground,
   ExodusLogo,
   ExodusTitle,
-  Button,
+  OnBoardingButton,
 } from "#components";
 import Images from "#images";
 import { moderateScale } from "#utils/screen";
@@ -38,12 +38,15 @@ const OnBoarding = () => {
       </ViewEnd>
       <ViewInBottomWithSpacing>
         <Heading1>Secure & Easy to Use Crypto Wallet</Heading1>
-        <Button marginTop={moderateScale(17)} title="GET STARTED"></Button>
-        <Button
+        <OnBoardingButton
+          marginTop={moderateScale(17)}
+          title="GET STARTED"
+        ></OnBoardingButton>
+        <OnBoardingButton
           marginTop={moderateScale(8)}
           isSecondary
           title="I already have a wallet"
-        ></Button>
+        ></OnBoardingButton>
       </ViewInBottomWithSpacing>
     </ImageBackground>
   );
