@@ -18,7 +18,6 @@ import {
   TextSmallButton,
 } from "#commons/Text";
 import { OnBoardingFooter, StepIndicator } from "#components";
-import Colors from "#constants/colors";
 import { moderateScale } from "#utils/screen";
 
 const Heading2Transparent = Heading2.extend({ opacity: 0.5 });
@@ -41,12 +40,7 @@ const StepperOnBoarding = ({ data, openNextPage, skipToLastPage }) => {
   const { heading, description, image } = data;
   return (
     <>
-      <LinearGradientFullBackground
-        colors={[Colors.BLUE_ZODIAC, Colors.MIDNIGHT]}
-        start={{ x: -0.75, y: 0.5 }}
-        end={{ x: 0, y: 0.7 }}
-        locations={[0.01, 0.99]}
-      ></LinearGradientFullBackground>
+      <LinearGradientFullBackground />
       <ViewEnd>
         <View>
           <OnBoardingFooter />
