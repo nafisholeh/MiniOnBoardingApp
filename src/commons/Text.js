@@ -18,3 +18,5 @@ export const ButtonText = styled(Text)({
   fontSize: 13,
   color: Colors.WHITE,
 });
+
+export const ButtonSecondaryText = ButtonText.extend({ fontSize: 14 });

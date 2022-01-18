@@ -1,6 +1,8 @@
 import { View } from "react-native";
 import styled from "shakl";
 
+import { moderateScale } from "#utils/screen";
+
 export const ViewCenter = styled(View)({
   alignItems: "center",
   justifyContent: "center",
@@ -22,4 +24,8 @@ export const ViewInBottom = styled(View)({
   left: 0,
   right: 0,
   alignItems: "center",
+});
+
+export const ViewInBottomWithSpacing = ViewInBottom.extend({
+  marginBottom: moderateScale(40),
 });

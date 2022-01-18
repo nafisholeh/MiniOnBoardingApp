@@ -1,7 +1,7 @@
 import React from "react";
 import { View, ImageBackground } from "react-native";
 
-import { ViewCenter, ViewEnd, ViewInBottom } from "#commons/View";
+import { ViewCenter, ViewEnd, ViewInBottomWithSpacing } from "#commons/View";
 import { Heading1 } from "#commons/Text";
 import {
   OnBoardingFooter,
@@ -36,10 +36,15 @@ const OnBoarding = () => {
           <ExodusTitle />
         </ViewCenter>
       </ViewEnd>
-      <ViewInBottom>
+      <ViewInBottomWithSpacing>
         <Heading1>Secure & Easy to Use Crypto Wallet</Heading1>
         <Button marginTop={moderateScale(17)} title="GET STARTED"></Button>
-      </ViewInBottom>
+        <Button
+          marginTop={moderateScale(8)}
+          isSecondary
+          title="I already have a wallet"
+        ></Button>
+      </ViewInBottomWithSpacing>
     </ImageBackground>
   );
 };
