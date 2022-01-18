@@ -1,12 +1,8 @@
 import React from "react";
 import { View } from "react-native";
+import { func } from "prop-types";
 
-import {
-  ViewCenter,
-  ViewEnd,
-  ViewInBottomWithSpacing,
-  ViewContainer,
-} from "#commons/View";
+import { ViewCenter, ViewEnd, ViewInBottomWithSpacing } from "#commons/View";
 import { Heading1 } from "#commons/Text";
 import { ImageFullBackground } from "#commons/Image";
 import {
@@ -19,9 +15,9 @@ import {
 import Images from "#images";
 import { moderateScale } from "#utils/screen";
 
-const OnBoarding = () => {
+const InitialOnBoarding = ({ openNextPage, skipToLastPage }) => {
   return (
-    <ViewContainer>
+    <>
       <ImageFullBackground source={Images.mask} />
       <ViewEnd>
         <View>
@@ -40,17 +36,24 @@ const OnBoarding = () => {
       <ViewInBottomWithSpacing>
         <Heading1>Secure & Easy to Use Crypto Wallet</Heading1>
         <OnBoardingButton
+          onPress={openNextPage}
           marginTop={moderateScale(17)}
           title="GET STARTED"
         ></OnBoardingButton>
         <OnBoardingButton
+          onPress={skipToLastPage}
           marginTop={moderateScale(8)}
           isSecondary
           title="I already have a wallet"
         ></OnBoardingButton>
       </ViewInBottomWithSpacing>
-    </ViewContainer>
+    </>
   );
 };
 
-export default OnBoarding;
+InitialOnBoarding.propTypes = {
+  openNextPage: func.isRequired,
+  skipToLastPage: func.isRequired,
+};
+
+export default InitialOnBoarding;
