@@ -40,8 +40,9 @@ const StepperOnBoarding = ({ openNextPage, skipToLastPage }) => {
     <>
       <LinearGradientFullBackground
         colors={[Colors.BLUE_ZODIAC, Colors.MIDNIGHT]}
-        start={{ x: 0, y: 0 }}
-        end={{ x: 1, y: 0 }}
+        start={{ x: -0.75, y: 0.5 }}
+        end={{ x: 0, y: 0.7 }}
+        locations={[0.01, 0.99]}
       ></LinearGradientFullBackground>
       <ViewEnd>
         <View>
