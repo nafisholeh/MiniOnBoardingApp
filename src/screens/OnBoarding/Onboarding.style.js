@@ -6,9 +6,4 @@ export default StyleSheet.create({
     justifyContent: "flex-end",
     resizeMode: "stretch",
   },
-  maskImages: {
-    height: null,
-    resizeMode: "center",
-    width: null,
-  },
 });

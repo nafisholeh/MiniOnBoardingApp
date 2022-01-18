@@ -1,8 +1,9 @@
 import React from "react";
-import { View, ImageBackground } from "react-native";
+import { View } from "react-native";
 
 import { ViewCenter, ViewEnd, ViewInBottomWithSpacing } from "#commons/View";
 import { Heading1 } from "#commons/Text";
+import { ImageFullBackground } from "#commons/Image";
 import {
   OnBoardingFooter,
   OnBoardingLogoBackground,
@@ -17,11 +18,8 @@ import styles from "./Onboarding.style";
 
 const OnBoarding = () => {
   return (
-    <ImageBackground
-      source={Images.mask}
-      imageStyle={styles.maskImages}
-      style={styles.mask}
-    >
+    <View style={styles.mask}>
+      <ImageFullBackground source={Images.mask} />
       <ViewEnd>
         <View>
           <OnBoardingFooter />
@@ -48,7 +46,7 @@ const OnBoarding = () => {
           title="I already have a wallet"
         ></OnBoardingButton>
       </ViewInBottomWithSpacing>
-    </ImageBackground>
+    </View>
   );
 };
 
