@@ -1,12 +1,14 @@
 import React from "react";
 import { View } from "react-native";
 import { func } from "prop-types";
+import FlexImage from "react-native-flex-image";
 
 import { LinearGradientFullBackground } from "#commons/Image";
 import {
   ViewEnd,
   ViewHorizontal,
   ViewInBottomWithSpacing,
+  ViewCenter,
 } from "#commons/View";
 import {
   Heading1,
@@ -18,6 +20,7 @@ import {
 import { OnBoardingFooter, StepIndicator } from "#components";
 import Colors from "#constants/colors";
 import { moderateScale } from "#utils/screen";
+import Images from "#images";
 
 const Heading2Transparent = Heading2.extend({ opacity: 0.5 });
 const TextSmallTouchableTransparent = TextSmallTouchableOpacity.extend({
@@ -49,6 +52,12 @@ const StepperOnBoarding = ({ openNextPage, skipToLastPage }) => {
           <OnBoardingFooter />
         </View>
       </ViewEnd>
+      <ViewCenter top="6%">
+        <FlexImage
+          source={Images.receive}
+          style={{ width: "100%", height: moderateScale(550) }}
+        ></FlexImage>
+      </ViewCenter>
       <ViewInBottomWithSpacing>
         <Heading1>Receive</Heading1>
         <Heading2Transparent>
