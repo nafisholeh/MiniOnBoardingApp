@@ -1,35 +1,45 @@
 import React from "react";
+import { TouchableHighlight } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
-import { string, number, bool } from "prop-types";
+import { string, number, bool, func } from "prop-types";
 
 import { ButtonText } from "#commons/Text";
 import Colors from "#constants/colors";
 import { moderateScale } from "#utils/screen";
 
-const Button = ({ title, marginTop, isSecondary }) => {
+const OnBoardingButton = ({ title, onPress, marginTop, isSecondary }) => {
   return (
-    <LinearGradient
-      colors={[Colors.MIDNIGHT_SMOOTH, Colors.MIDNIGHT]}
-      start={{ x: 0, y: 0 }}
-      end={{ x: 1, y: 0 }}
+    <TouchableHighlight
       style={{
-        borderRadius: moderateScale(27),
-        height: moderateScale(50),
-        width: moderateScale(260),
         marginTop: marginTop ?? 0,
-        justifyContent: "center",
-        opacity: isSecondary ? 0.3 : 1,
+        borderRadius: moderateScale(27),
       }}
+      onPress={onPress}
+      underlayColor={Colors.MIDNIGHT}
     >
-      <ButtonText>{title}</ButtonText>
-    </LinearGradient>
+      <LinearGradient
+        colors={[Colors.MIDNIGHT_SMOOTH, Colors.MIDNIGHT]}
+        start={{ x: 0, y: 0 }}
+        end={{ x: 1, y: 0 }}
+        style={{
+          borderRadius: moderateScale(27),
+          height: moderateScale(50),
+          width: moderateScale(260),
+          justifyContent: "center",
+          opacity: isSecondary ? 0.3 : 1,
+        }}
+      >
+        <ButtonText>{title}</ButtonText>
+      </LinearGradient>
+    </TouchableHighlight>
   );
 };
 
-Button.propTypes = {
+OnBoardingButton.propTypes = {
   title: string,
   marginTop: number,
   isSecondary: bool,
+  onPress: func.isRequired,
 };
 
-export default Button;
+export default OnBoardingButton;
