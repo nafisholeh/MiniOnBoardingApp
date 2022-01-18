@@ -1,7 +1,12 @@
 import React from "react";
 import { View } from "react-native";
 
-import { ViewCenter, ViewEnd, ViewInBottomWithSpacing } from "#commons/View";
+import {
+  ViewCenter,
+  ViewEnd,
+  ViewInBottomWithSpacing,
+  ViewContainer,
+} from "#commons/View";
 import { Heading1 } from "#commons/Text";
 import { ImageFullBackground } from "#commons/Image";
 import {
@@ -14,11 +19,9 @@ import {
 import Images from "#images";
 import { moderateScale } from "#utils/screen";
 
-import styles from "./Onboarding.style";
-
 const OnBoarding = () => {
   return (
-    <View style={styles.mask}>
+    <ViewContainer>
       <ImageFullBackground source={Images.mask} />
       <ViewEnd>
         <View>
@@ -46,7 +49,7 @@ const OnBoarding = () => {
           title="I already have a wallet"
         ></OnBoardingButton>
       </ViewInBottomWithSpacing>
-    </View>
+    </ViewContainer>
   );
 };
 

@@ -3,6 +3,12 @@ import styled from "shakl";
 
 import { moderateScale } from "#utils/screen";
 
+export const ViewContainer = styled(View)({
+  flex: 1,
+  justifyContent: "flex-end",
+  resizeMode: "stretch",
+});
+
 export const ViewCenter = styled(View)({
   alignItems: "center",
   justifyContent: "center",
