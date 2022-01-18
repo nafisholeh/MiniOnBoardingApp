@@ -5,7 +5,7 @@ import { func } from "prop-types";
 import { LinearGradientFullBackground } from "#commons/Image";
 import { ViewEnd, ViewInBottomWithSpacing } from "#commons/View";
 import { Heading1, Heading2, TextTouchableOpacity } from "#commons/Text";
-import { OnBoardingFooter } from "#components";
+import { OnBoardingFooter, StepIndicator } from "#components";
 import Colors from "#constants/colors";
 import { moderateScale } from "#utils/screen";
 
@@ -36,6 +36,7 @@ const StepperOnBoarding = ({ openNextPage, skipToLastPage }) => {
         <TextTouchableOpacityBottom onPress={openNextPage}>
           Next
         </TextTouchableOpacityBottom>
+        <StepIndicator stepTotal={4} />
       </ViewInBottomWithSpacing>
     </>
   );

@@ -3,7 +3,7 @@ import { TouchableHighlight } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { string, number, bool, func } from "prop-types";
 
-import { ButtonText } from "#commons/Text";
+import { TextInButton } from "#commons/Text";
 import Colors from "#constants/colors";
 import { moderateScale } from "#utils/screen";
 
@@ -29,7 +29,7 @@ const OnBoardingButton = ({ title, onPress, marginTop, isSecondary }) => {
           opacity: isSecondary ? 0.3 : 1,
         }}
       >
-        <ButtonText>{title}</ButtonText>
+        <TextInButton>{title}</TextInButton>
       </LinearGradient>
     </TouchableHighlight>
   );

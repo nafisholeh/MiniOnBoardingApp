@@ -36,3 +36,9 @@ export const ViewInBottomWithSpacing = ViewInBottom.extend({
   marginBottom: moderateScale(40),
   paddingHorizontal: "5%",
 });
+
+export const ViewHorizontal = styled(View)({
+  flexDirection: "row",
+  alignItems: "center",
+  justifyContent: "space-around",
+});
