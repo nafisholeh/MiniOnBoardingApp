@@ -34,4 +34,5 @@ export const ViewInBottom = styled(View)({
 
 export const ViewInBottomWithSpacing = ViewInBottom.extend({
   marginBottom: moderateScale(40),
+  paddingHorizontal: "5%",
 });
