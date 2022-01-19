@@ -23,7 +23,7 @@ const InitialOnBoarding = ({ openNextPage, skipToLastPage }) => {
       <ViewCenter bottom="36%">
         <OnBoardingLogoBackground />
       </ViewCenter>
-      <ViewCenter bottom="55%">
+      <ViewCenter bottom="53.5%">
         <ExodusLogo />
       </ViewCenter>
       <ViewCenter bottom="48%">
