@@ -1,7 +1,7 @@
 import { View } from "react-native";
 import styled from "shakl";
 
-import { moderateScale } from "#utils/screen";
+import { isTablet } from "#utils/screen";
 
 export const ViewContainer = styled(View)({
   flex: 1,
@@ -16,7 +16,8 @@ export const ViewCenter = styled(View)({
   position: "absolute",
   right: 0,
 }).attrs((props) => ({
-  top: props.top ?? 0,
+  top: props.top,
+  bottom: props.bottom,
 }));
 
 export const ViewEnd = styled(View)({
@@ -39,15 +40,16 @@ export const ViewInTopWithSpacing = ViewInTop.extend({
 
 export const ViewInBottom = styled(View)({
   position: "absolute",
-  bottom: 0,
+  bottom: "5%",
   left: 0,
   right: 0,
   alignItems: "center",
 });
 
-export const ViewInBottomWithSpacing = ViewInBottom.extend({
-  marginBottom: moderateScale(40),
-  paddingHorizontal: "5%",
+export const ViewInsideFooter = ViewInBottom.extend({
+  paddingHorizontal: isTablet() ? "15%" : "5%",
+  height: "30%",
+  justifyContent: "space-between",
 });
 
 export const ViewHorizontal = styled(View)({

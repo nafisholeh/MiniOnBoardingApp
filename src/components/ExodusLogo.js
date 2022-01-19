@@ -1,8 +1,10 @@
 import * as React from "react";
 import Svg, { Defs, LinearGradient, Stop, G, Path } from "react-native-svg";
 
+import { verticalScale } from "#utils/screen";
+
 const ExodusLogo = (props) => (
-  <Svg width="16%" height={100} viewBox={`0 0 324 324`} {...props}>
+  <Svg width="16%" height={verticalScale(42)} viewBox="0 0 324 324" {...props}>
     <Defs>
       <LinearGradient id="a" x1="0%" y1="50%" y2="50%">
         <Stop offset="0%" stopColor="#00BFFF" />

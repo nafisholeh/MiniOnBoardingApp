@@ -10,10 +10,14 @@ export const scale = (size) => (width / guidelineBaseWidth) * size;
 
 export const verticalScale = (size) => (height / guidelineBaseHeight) * size;
 
+export const verticalScaleToPercent = (size) => {
+  return `${verticalScale(size)}%`;
+};
+
 export const moderateScale = (size, factor = 0.5) =>
   size + (scale(size) - size) * factor;
 
-export const isTablet = (width, height) => {
+export const isTablet = () => {
   if (!width || !height) return false;
-  return height / width <= 1.8;
+  return height / width <= 1.6;
 };

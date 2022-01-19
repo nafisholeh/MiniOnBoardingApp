@@ -1,5 +1,4 @@
-import React, { useMemo } from "react";
-import { useWindowDimensions } from "react-native";
+import React from "react";
 import Svg, {
   Defs,
   LinearGradient,
@@ -10,18 +9,9 @@ import Svg, {
   Use,
 } from "react-native-svg";
 
-import { isTablet } from "#utils/screen";
-
 const OnBoardingFooter = (props) => {
-  const { height, width } = useWindowDimensions();
-  const isTablets = useMemo(() => isTablet(width, height), [width, height]);
   return (
-    <Svg
-      width="100%"
-      height={isTablets ? height / 1.5 : height / 1.7}
-      viewBox={[0, 0, 375, isTablets ? 330 : 400].join(" ")}
-      {...props}
-    >
+    <Svg width="100%" height="67%" viewBox="0 0 375 330" {...props}>
       <Defs>
         <LinearGradient x1="85.828%" y1="100%" x2="14.172%" y2="21.069%" id="b">
           <Stop stopColor="#420BE6" offset="0%" />

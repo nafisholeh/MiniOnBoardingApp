@@ -6,12 +6,7 @@ import {
   LinearGradientFullBackground,
   ImageFitContainer,
 } from "#commons/Image";
-import {
-  ViewEnd,
-  ViewHorizontal,
-  ViewInBottomWithSpacing,
-  ViewCenter,
-} from "#commons/View";
+import { ViewHorizontal, ViewInsideFooter, ViewCenter } from "#commons/View";
 import {
   Heading1,
   Heading2,
@@ -20,7 +15,7 @@ import {
   TextSmallButton,
 } from "#commons/Text";
 import { OnBoardingFooter, StepIndicator, PrimaryButton } from "#components";
-import { moderateScale } from "#utils/screen";
+import { verticalScale } from "#utils/screen";
 
 const Heading2Transparent = Heading2.extend({ opacity: 0.5 });
 const TextSmallTouchableTransparent = TextSmallTouchableOpacity.extend({
@@ -29,16 +24,9 @@ const TextSmallTouchableTransparent = TextSmallTouchableOpacity.extend({
 const TextSmallInvisible = TextSmallButton.extend({
   opacity: 0,
 });
-const TextTouchableOpacityBottom = TextTouchableOpacity.extend({
-  marginTop: moderateScale(36),
-  marginBottom: moderateScale(39),
-});
 const ViewHorizontalStretch = ViewHorizontal.extend({
   width: "92%",
   justifyContent: "space-between",
-});
-const ImageFitCover = ImageFitContainer.extend({
-  height: moderateScale(550),
 });
 
 const StepperOnBoarding = ({
@@ -53,36 +41,33 @@ const StepperOnBoarding = ({
   return (
     <>
       <LinearGradientFullBackground />
-      <ViewEnd>
-        <View>
-          <OnBoardingFooter />
-        </View>
-      </ViewEnd>
-      <ViewCenter top="6%">
-        {image ? <ImageFitCover source={image} /> : null}
+      <OnBoardingFooter />
+      <ViewCenter top="6%" bottom="30%">
+        {image ? <ImageFitContainer source={image} /> : null}
       </ViewCenter>
-      <ViewInBottomWithSpacing>
-        <Heading1>{heading}</Heading1>
-        <Heading2Transparent>{description}</Heading2Transparent>
+      <ViewInsideFooter>
+        <View>
+          <Heading1>{heading}</Heading1>
+          <Heading2Transparent>{description}</Heading2Transparent>
+        </View>
         {useTwoStackButtons ? (
-          <>
+          <View>
             <PrimaryButton
               onPress={openUserPage}
-              marginTop={moderateScale(17)}
               title="GET STARTED"
             ></PrimaryButton>
             <PrimaryButton
               onPress={openUserPage}
-              marginTop={moderateScale(8)}
+              marginTop={verticalScale(8)}
               isSecondary
               title="I already have a wallet"
             ></PrimaryButton>
-          </>
+          </View>
         ) : (
           <>
-            <TextTouchableOpacityBottom onPress={openNextPage}>
+            <TextTouchableOpacity onPress={openNextPage}>
               Next
-            </TextTouchableOpacityBottom>
+            </TextTouchableOpacity>
             <ViewHorizontalStretch>
               <TextSmallInvisible>SKIP</TextSmallInvisible>
               <StepIndicator activeIndex={currentPageIndex} stepTotal={4} />
@@ -92,7 +77,7 @@ const StepperOnBoarding = ({
             </ViewHorizontalStretch>
           </>
         )}
-      </ViewInBottomWithSpacing>
+      </ViewInsideFooter>
     </>
   );
 };

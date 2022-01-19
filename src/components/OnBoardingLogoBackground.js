@@ -1,5 +1,4 @@
-import React, { useMemo } from "react";
-import { useWindowDimensions } from "react-native";
+import React from "react";
 import Svg, {
   Defs,
   LinearGradient,
@@ -9,17 +8,14 @@ import Svg, {
   Use,
 } from "react-native-svg";
 
-import { isTablet } from "#utils/screen";
+import { verticalScale } from "#utils/screen";
 
 const SvgComponent = (props) => {
-  const { height, width } = useWindowDimensions();
-  const isTablets = useMemo(() => isTablet(width, height), [width, height]);
-
   return (
     <Svg
-      width="70%"
-      height={isTablets ? 385 : 273}
-      viewBox={`0 0 275 273`}
+      width="100%"
+      height={verticalScale(220)}
+      viewBox="0 0 275 273"
       {...props}
     >
       <Defs>

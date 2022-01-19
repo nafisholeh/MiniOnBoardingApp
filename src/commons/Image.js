@@ -28,6 +28,7 @@ export const LinearGradientFullBackground = styled(LinearGradient)({
 
 export const ImageFitContainer = styled(FlexImage)({
   width: "100%",
+  height: "100%",
 });
 
 export const ImageSVGIcon = styled(SvgXml)({}).attrs((props) => ({

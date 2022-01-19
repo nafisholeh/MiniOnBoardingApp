@@ -2,7 +2,7 @@ import React from "react";
 import { View } from "react-native";
 import { func } from "prop-types";
 
-import { ViewCenter, ViewEnd, ViewInBottomWithSpacing } from "#commons/View";
+import { ViewCenter, ViewInsideFooter } from "#commons/View";
 import { Heading1 } from "#commons/Text";
 import { ImageFullBackground } from "#commons/Image";
 import {
@@ -19,34 +19,31 @@ const InitialOnBoarding = ({ openNextPage, skipToLastPage }) => {
   return (
     <>
       <ImageFullBackground source={Images.mask} />
-      <ViewEnd>
-        <View>
-          <OnBoardingFooter />
-        </View>
-        <ViewCenter top="33%">
-          <OnBoardingLogoBackground />
-        </ViewCenter>
-        <ViewCenter top="39%">
-          <ExodusLogo />
-        </ViewCenter>
-        <ViewCenter top="50%">
-          <ExodusTitle />
-        </ViewCenter>
-      </ViewEnd>
-      <ViewInBottomWithSpacing>
+      <OnBoardingFooter />
+      <ViewCenter bottom="36%">
+        <OnBoardingLogoBackground />
+      </ViewCenter>
+      <ViewCenter bottom="55%">
+        <ExodusLogo />
+      </ViewCenter>
+      <ViewCenter bottom="48%">
+        <ExodusTitle />
+      </ViewCenter>
+      <ViewInsideFooter>
         <Heading1>Secure & Easy to Use Crypto Wallet</Heading1>
-        <PrimaryButton
-          onPress={openNextPage}
-          marginTop={moderateScale(17)}
-          title="GET STARTED"
-        ></PrimaryButton>
-        <PrimaryButton
-          onPress={skipToLastPage}
-          marginTop={moderateScale(8)}
-          isSecondary
-          title="I already have a wallet"
-        ></PrimaryButton>
-      </ViewInBottomWithSpacing>
+        <View>
+          <PrimaryButton
+            onPress={openNextPage}
+            title="GET STARTED"
+          ></PrimaryButton>
+          <PrimaryButton
+            onPress={skipToLastPage}
+            marginTop={moderateScale(8)}
+            isSecondary
+            title="I already have a wallet"
+          ></PrimaryButton>
+        </View>
+      </ViewInsideFooter>
     </>
   );
 };

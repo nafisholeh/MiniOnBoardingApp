@@ -1,7 +1,7 @@
 import React from "react";
 
 import {
-  ViewInBottomWithSpacing,
+  ViewInsideFooter,
   ViewContainer,
   ViewInTopWithSpacing,
 } from "#commons/View";
@@ -15,6 +15,10 @@ import { moderateScale } from "#utils/screen";
 import Colors from "#constants/colors";
 import Images from "#images";
 import STRINGS from "#constants/strings";
+
+const ViewInsideFooterSingleChild = ViewInsideFooter.extend({
+  justifyContent: "flex-end",
+});
 
 const CreateWallet = () => {
   const openDashboard = () => {};
@@ -91,14 +95,14 @@ const CreateWallet = () => {
         top="13%"
         left="90%"
       />
-      <ViewInBottomWithSpacing>
+      <ViewInsideFooterSingleChild>
         <PrimaryButton
           onPress={openDashboard}
           marginTop={moderateScale(17)}
           title="CREATE WALLET"
           colors={[Colors.PURPLE_MOUNTAIN_MAJESTY, Colors.HAN_PURPLE]}
         ></PrimaryButton>
-      </ViewInBottomWithSpacing>
+      </ViewInsideFooterSingleChild>
     </ViewContainer>
   );
 };

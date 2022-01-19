@@ -2,14 +2,14 @@ import { Text } from "react-native";
 import styled from "shakl";
 
 import Colors from "#constants/colors";
-import { moderateScale } from "#utils/screen";
+import { moderateScale, verticalScale } from "#utils/screen";
 
 export const Heading1 = styled(Text)({
   textAlign: "center",
   fontWeight: "300",
   fontSize: moderateScale(32, 0.25),
   color: Colors.WHITE,
-  marginVertical: moderateScale(10),
+  marginBottom: verticalScale(8),
 });
 
 export const Heading2 = styled(Text)({
