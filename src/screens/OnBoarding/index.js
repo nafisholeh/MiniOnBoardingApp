@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { func } from "prop-types";
 
 import { ViewContainer } from "#commons/View";
 import InitialOnBoarding from "./InitialOnBoarding";
@@ -33,7 +34,7 @@ const pageData = [
   },
 ];
 
-const OnBoarding = () => {
+const OnBoarding = ({ navigation }) => {
   const [pageIndex, setPageIndex] = useState(0);
   const openNextPage = () => {
     setPageIndex(pageIndex + 1);
@@ -41,7 +42,9 @@ const OnBoarding = () => {
   const skipToLastPage = () => {
     setPageIndex(lastPageIndex);
   };
-  const openUserPage = () => {};
+  const openUserPage = () => {
+    navigation.navigate("CreateWallet");
+  };
   return (
     <ViewContainer>
       {pageIndex === 0 ? (
@@ -62,6 +65,12 @@ const OnBoarding = () => {
       ) : null}
     </ViewContainer>
   );
+};
+
+OnBoarding.propTypes = {
+  navigation: {
+    navigate: func.isRequired,
+  },
 };
 
 export default OnBoarding;

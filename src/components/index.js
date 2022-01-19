@@ -2,7 +2,7 @@ import OnBoardingFooter from "./OnBoardingFooter";
 import OnBoardingLogoBackground from "./OnBoardingLogoBackground";
 import ExodusLogo from "./ExodusLogo";
 import ExodusTitle from "./ExodusTitle";
-import OnBoardingButton from "./OnBoardingButton";
+import PrimaryButton from "./PrimaryButton";
 import StepIndicator from "./StepIndicator";
 
 export {
@@ -10,6 +10,6 @@ export {
   OnBoardingLogoBackground,
   ExodusLogo,
   ExodusTitle,
-  OnBoardingButton,
+  PrimaryButton,
   StepIndicator,
 };

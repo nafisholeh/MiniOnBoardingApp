@@ -19,7 +19,7 @@ import {
   TextSmallTouchableOpacity,
   TextSmallButton,
 } from "#commons/Text";
-import { OnBoardingFooter, StepIndicator, OnBoardingButton } from "#components";
+import { OnBoardingFooter, StepIndicator, PrimaryButton } from "#components";
 import { moderateScale } from "#utils/screen";
 
 const Heading2Transparent = Heading2.extend({ opacity: 0.5 });
@@ -66,17 +66,17 @@ const StepperOnBoarding = ({
         <Heading2Transparent>{description}</Heading2Transparent>
         {useTwoStackButtons ? (
           <>
-            <OnBoardingButton
+            <PrimaryButton
               onPress={openUserPage}
               marginTop={moderateScale(17)}
               title="GET STARTED"
-            ></OnBoardingButton>
-            <OnBoardingButton
+            ></PrimaryButton>
+            <PrimaryButton
               onPress={openUserPage}
               marginTop={moderateScale(8)}
               isSecondary
               title="I already have a wallet"
-            ></OnBoardingButton>
+            ></PrimaryButton>
           </>
         ) : (
           <>

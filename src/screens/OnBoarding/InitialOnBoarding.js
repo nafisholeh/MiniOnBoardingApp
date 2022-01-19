@@ -10,7 +10,7 @@ import {
   OnBoardingLogoBackground,
   ExodusLogo,
   ExodusTitle,
-  OnBoardingButton,
+  PrimaryButton,
 } from "#components";
 import Images from "#images";
 import { moderateScale } from "#utils/screen";
@@ -35,17 +35,17 @@ const InitialOnBoarding = ({ openNextPage, skipToLastPage }) => {
       </ViewEnd>
       <ViewInBottomWithSpacing>
         <Heading1>Secure & Easy to Use Crypto Wallet</Heading1>
-        <OnBoardingButton
+        <PrimaryButton
           onPress={openNextPage}
           marginTop={moderateScale(17)}
           title="GET STARTED"
-        ></OnBoardingButton>
-        <OnBoardingButton
+        ></PrimaryButton>
+        <PrimaryButton
           onPress={skipToLastPage}
           marginTop={moderateScale(8)}
           isSecondary
           title="I already have a wallet"
-        ></OnBoardingButton>
+        ></PrimaryButton>
       </ViewInBottomWithSpacing>
     </>
   );

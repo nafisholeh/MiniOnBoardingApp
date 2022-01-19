@@ -24,6 +24,19 @@ export const ViewEnd = styled(View)({
   justifyContent: "flex-end",
 });
 
+export const ViewInTop = styled(View)({
+  position: "absolute",
+  top: 0,
+  left: 0,
+  right: 0,
+  alignItems: "center",
+});
+
+export const ViewInTopWithSpacing = ViewInTop.extend({
+  top: "12.5%",
+  paddingHorizontal: "5%",
+});
+
 export const ViewInBottom = styled(View)({
   position: "absolute",
   bottom: 0,
