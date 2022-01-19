@@ -1,4 +1,5 @@
 import React from "react";
+import _ from "lodash";
 
 import {
   ViewInsideFooter,
@@ -12,6 +13,7 @@ import {
 import { Heading1, Heading2 } from "#commons/Text";
 import { PrimaryButton } from "#components";
 import { moderateScale } from "#utils/screen";
+import { storeRandomBIPS } from "#utils/storage";
 import Colors from "#constants/colors";
 import Images from "#images";
 import STRINGS from "#constants/strings";
@@ -21,7 +23,11 @@ const ViewInsideFooterSingleChild = ViewInsideFooter.extend({
 });
 
 const CreateWallet = () => {
-  const openDashboard = () => {};
+  const openDashboard = () => {
+    const randomBIPS = _.sampleSize(STRINGS.BIPS, 12);
+    const serializedRandomBIPS = JSON.stringify(randomBIPS);
+    storeRandomBIPS(serializedRandomBIPS);
+  };
   return (
     <ViewContainer>
       <LinearGradientFullBackground />
