@@ -14,7 +14,7 @@ const Dashboard = () => {
       STRINGS.BALANCE_STORAGE_KEY
     );
     setBalance(currentBalance);
-  });
+  }, []);
   return (
     <ViewContainerTop>
       <LinearGradientFullBackground />
