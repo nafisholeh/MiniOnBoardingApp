@@ -40,7 +40,7 @@ PrimaryButton.propTypes = {
   marginTop: number,
   isSecondary: bool,
   onPress: func.isRequired,
-  colors: arrayOf({ string }),
+  colors: arrayOf(string),
 };
 
 PrimaryButton.defaultProps = {

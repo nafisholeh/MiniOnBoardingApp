@@ -1,6 +1,6 @@
 import React from "react";
 import _ from "lodash";
-import { func } from "prop-types";
+import { func, shape } from "prop-types";
 
 import {
   ViewInsideFooter,
@@ -117,9 +117,9 @@ const CreateWallet = ({ navigation }) => {
 };
 
 CreateWallet.propTypes = {
-  navigation: {
-    navigate: func.isRequired,
-  },
+  navigation: shape({
+    navigate: func,
+  }),
 };
 
 export default CreateWallet;

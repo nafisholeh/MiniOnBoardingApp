@@ -1,6 +1,6 @@
 import React from "react";
 import { View } from "react-native";
-import { func, string, bool, number } from "prop-types";
+import { func, string, shape, bool, oneOfType, number } from "prop-types";
 
 import {
   LinearGradientFullBackground,
@@ -87,11 +87,11 @@ StepperOnBoarding.propTypes = {
   openNextPage: func.isRequired,
   skipToLastPage: func.isRequired,
   openUserPage: func.isRequired,
-  data: {
+  data: shape({
     heading: string,
     description: string,
-    image: string,
-  },
+    image: oneOfType([string, number]),
+  }),
   useTwoStackButtons: bool,
 };
 

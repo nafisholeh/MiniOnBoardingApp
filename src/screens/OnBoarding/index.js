@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { func } from "prop-types";
+import { func, shape } from "prop-types";
 
 import { ViewContainer } from "#commons/View";
 import InitialOnBoarding from "./InitialOnBoarding";
@@ -65,9 +65,9 @@ const OnBoarding = ({ navigation }) => {
 };
 
 OnBoarding.propTypes = {
-  navigation: {
-    navigate: func.isRequired,
-  },
+  navigation: shape({
+    navigate: func,
+  }),
 };
 
 export default OnBoarding;
