@@ -57,7 +57,7 @@ const StepperOnBoarding = ({
               title="GET STARTED"
             ></PrimaryButton>
             <PrimaryButton
-              onPress={openUserPage}
+              onPress={() => {}}
               marginTop={verticalScale(8)}
               isSecondary
               title="I already have a wallet"

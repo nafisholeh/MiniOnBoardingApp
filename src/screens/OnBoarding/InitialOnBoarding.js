@@ -15,7 +15,7 @@ import {
 import Images from "#images";
 import { moderateScale } from "#utils/screen";
 
-const InitialOnBoarding = ({ openNextPage, skipToLastPage }) => {
+const InitialOnBoarding = ({ openNextPage }) => {
   return (
     <>
       <ImageFullBackground source={Images.mask} />
@@ -37,7 +37,7 @@ const InitialOnBoarding = ({ openNextPage, skipToLastPage }) => {
             title="GET STARTED"
           ></PrimaryButton>
           <PrimaryButton
-            onPress={skipToLastPage}
+            onPress={() => {}}
             marginTop={moderateScale(8)}
             isSecondary
             title="I already have a wallet"
@@ -50,7 +50,6 @@ const InitialOnBoarding = ({ openNextPage, skipToLastPage }) => {
 
 InitialOnBoarding.propTypes = {
   openNextPage: func.isRequired,
-  skipToLastPage: func.isRequired,
 };
 
 export default InitialOnBoarding;

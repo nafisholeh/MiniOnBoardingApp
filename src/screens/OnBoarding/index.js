@@ -48,10 +48,7 @@ const OnBoarding = ({ navigation }) => {
   return (
     <ViewContainer>
       {pageIndex === 0 ? (
-        <InitialOnBoarding
-          openNextPage={openNextPage}
-          skipToLastPage={skipToLastPage}
-        />
+        <InitialOnBoarding openNextPage={openNextPage} />
       ) : null}
       {pageIndex > 0 ? (
         <StepperOnBoarding
