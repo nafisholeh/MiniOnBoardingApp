@@ -1,19 +1,18 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-import STRINGS from "#constants/strings";
-
-export const storeRandomBIPS = async (value) => {
+export const saveToPersistentStorage = async (key, value) => {
   try {
-    if (!value) return;
-    await AsyncStorage.setItem(STRINGS.BIPS_STORAGE_KEY, value);
+    if (!key || !value) return;
+    await AsyncStorage.setItem(key, value);
   } catch (e) {
     console.error(e);
   }
 };
 
-export const retrieveRandomBIPS = async () => {
+export const loadFromPersistentStorage = async (key) => {
   try {
-    const value = await AsyncStorage.getItem(STRINGS.BIPS_STORAGE_KEY);
+    if (!key) return;
+    const value = await AsyncStorage.getItem(key);
     return value;
   } catch (e) {
     console.error(e);

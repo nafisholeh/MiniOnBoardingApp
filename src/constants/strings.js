@@ -2,6 +2,7 @@ const strings = {
   SMALL: "small",
   MEDIUM: "medium",
   LARGE: "large",
+  BALANCE_STORAGE_KEY: "@balance",
   BIPS_STORAGE_KEY: "@random-bips",
   BIPS: [
     "abandon",

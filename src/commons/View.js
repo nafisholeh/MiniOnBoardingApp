@@ -9,6 +9,20 @@ export const ViewContainer = styled(View)({
   resizeMode: "stretch",
 });
 
+export const ViewContainerTop = styled(View)({
+  flex: 1,
+  justifyContent: "flex-start",
+  alignItems: "center",
+});
+
+export const ViewContentContainer = styled(View)({
+  flex: 1,
+  width: "97%",
+  marginVertical: "10%",
+  paddingVertical: "4%",
+  alignItems: "center",
+});
+
 export const ViewCenter = styled(View)({
   alignItems: "center",
   justifyContent: "center",

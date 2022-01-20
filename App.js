@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import OnBoarding from "./src/screens/OnBoarding";
 import CreateWallet from "./src/screens/CreateWallet";
+import Dashboard from "./src/screens/Dashboard";
 
 const Stack = createNativeStackNavigator();
 
@@ -17,6 +18,7 @@ export default function App() {
       >
         <Stack.Screen name="OnBoarding" component={OnBoarding} />
         <Stack.Screen name="CreateWallet" component={CreateWallet} />
+        <Stack.Screen name="Dashboard" component={Dashboard} />
       </Stack.Navigator>
     </NavigationContainer>
   );

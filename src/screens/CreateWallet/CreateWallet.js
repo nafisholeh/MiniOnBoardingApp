@@ -1,5 +1,6 @@
 import React from "react";
 import _ from "lodash";
+import { func } from "prop-types";
 
 import {
   ViewInsideFooter,
@@ -13,7 +14,7 @@ import {
 import { Heading1, Heading2 } from "#commons/Text";
 import { PrimaryButton } from "#components";
 import { moderateScale } from "#utils/screen";
-import { storeRandomBIPS } from "#utils/storage";
+import { saveToPersistentStorage } from "#utils/storage";
 import Colors from "#constants/colors";
 import Images from "#images";
 import STRINGS from "#constants/strings";
@@ -22,11 +23,13 @@ const ViewInsideFooterSingleChild = ViewInsideFooter.extend({
   justifyContent: "flex-end",
 });
 
-const CreateWallet = () => {
+const CreateWallet = ({ navigation }) => {
   const openDashboard = () => {
     const randomBIPS = _.sampleSize(STRINGS.BIPS, 12);
     const serializedRandomBIPS = JSON.stringify(randomBIPS);
-    storeRandomBIPS(serializedRandomBIPS);
+    saveToPersistentStorage(STRINGS.BIPS_STORAGE_KEY, serializedRandomBIPS);
+    saveToPersistentStorage(STRINGS.BALANCE_STORAGE_KEY, "0");
+    navigation.navigate("Dashboard");
   };
   return (
     <ViewContainer>
@@ -111,6 +114,12 @@ const CreateWallet = () => {
       </ViewInsideFooterSingleChild>
     </ViewContainer>
   );
+};
+
+CreateWallet.propTypes = {
+  navigation: {
+    navigate: func.isRequired,
+  },
 };
 
 export default CreateWallet;
